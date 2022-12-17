@@ -21,27 +21,18 @@
 			</ul>
 		</div>
 		<div class="site-header__actions cluster">
-			<div class="site-header__search">
-				<web-search i18n="{&quot;search&quot;:{&quot;en&quot;:&quot;Search&quot;},&quot;open_search&quot;:{&quot;en&quot;:&quot;Open search&quot;},&quot;all_articles&quot;:{&quot;en&quot;:&quot;All articles&quot;},&quot;close_search&quot;:{&quot;en&quot;:&quot;Close search&quot;}}" results-id="search-main-results"><!---->
-					<button class="web-search__open-btn icon-button color-mid-text" aria-label="Open search">
-						<svg class="web-search__search-icon" xmlns="http://www.w3.org/2000/svg" height="24" width="24" aria-hidden="true">
-							<path d="M0 0h24v24H0z" fill="none"></path>
-							<path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0016 9.5 6.5 6.5 0 109.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"></path>
-						</svg>
-					</button>
-					<div class="web-search__input-wrapper" role="combobox" aria-controls="web-search__input" aria-haspopup="listbox" aria-expanded="false" aria-owns="search-main-results-list">
-						<input id="web-search__input" class="web-search__input" type="text" role="searchbox" autocomplete="off" aria-autocomplete="list" aria-controls="search-main-results-list" aria-label="All articles" placeholder="Search">
-					</div>
-				</web-search>
-				<web-search-results id="search-main-results"><!---->
-					<div role="listbox" aria-hidden="true" id="search-main-results-list"></div>
-				</web-search-results>
-			</div>
+			<a-button shape="circle">
+				<template #icon><SearchOutlined /></template>
+			</a-button>
 		</div>
 	</body>
 </template>
 
 <style>
+body {
+	display: flex;
+}
+
 ul {
 	list-style-type: none;
 	margin: 0;
@@ -53,11 +44,8 @@ ul {
 	float: left;
 }
 
-.web-search__open-btn {
-	float: right;
-}
 
-li {
+.site-header__actions, li {
 	float: left;
 }
 
@@ -77,3 +65,12 @@ a:hover,a:active{
 	background-color: #e6e6e6;
 }
 </style>
+
+<script>
+import { SearchOutlined } from '@ant-design/icons-vue';
+	export default {
+		components: {
+		SearchOutlined,
+	},
+};
+</script>
