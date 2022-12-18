@@ -31,6 +31,7 @@
 <style>
 body {
 	display: flex;
+	justify-content: center;
 }
 
 ul {
