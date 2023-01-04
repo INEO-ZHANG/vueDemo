@@ -185,7 +185,7 @@
 						</div>
 					</div>
 					<div class="jump_button">
-						<a-button type="primary" href="https://www.web.dev/authors/">SEE OUR AUTHORS</a-button>
+						<a-button size="large" type="primary" href="https://www.web.dev/authors/">SEE OUR AUTHORS</a-button>
 					</div>
 				</section>
 
@@ -249,12 +249,146 @@
 					</div>
 					
 					<div class="jump_button Chrome_d">
-						<a-button type="primary" href="https://developer.chrome.com/">CHROME DEVELOPERS</a-button>
+						<a-button size="large" type="primary" href="https://developer.chrome.com/">CHROME DEVELOPERS</a-button>
+					</div>
+
+				</section>
+
+				<section class="two_questions">
+					<div class="wrapper">
+						<div class="two_pad">
+							<div class="Spot">
+								<div class="mid-svg">
+									<svg viewBox="0 0 41 40" fill="none" height="40" width="41" xmlns="http://www.w3.org/2000/svg"><path d="M20.75 0C9.71 0 0.75 8.96 0.75 20C0.75 31.04 9.71 40 20.75 40C31.79 40 40.75 31.04 40.75 20C40.75 8.96 31.79 0 20.75 0ZM18.75 30V26H22.75V30H18.75ZM18.75 10V22H22.75V10H18.75Z" clip-rule="evenodd" fill="#585B63" fill-rule="evenodd"></path></svg>
+								</div>
+								
+								<h5>Spotted an error?</h5>
+								<p class="mid-p color-mid-text">
+									Please <a href="https://github.com/GoogleChrome/web.dev/issues">raise an issue</a> with information about the page and what’s wrong, and we’ll take a look.
+								</p>
+							</div>
+
+							<span class="span1"></span>
+
+							<div class="contribute">
+								<div class="mid-svg">
+									<svg viewBox="0 0 37 37" fill="none" height="37" width="37" xmlns="http://www.w3.org/2000/svg"><path d="M0.25 29.5001V37.0001H7.75L29.87 14.8801L22.37 7.38012L0.25 29.5001ZM35.67 9.08012C36.45 8.30012 36.45 7.04012 35.67 6.26012L30.99 1.58012C30.21 0.800117 28.95 0.800117 28.17 1.58012L24.51 5.24012L32.01 12.7401L35.67 9.08012V9.08012Z" fill="#585B63"></path></svg>
+								</div>
+								
+								<h5>Want to contribute?</h5>
+								<p class="mid-p color-mid-text">
+									We feature articles and larger sections of content from external authors. If you would like to pitch an article, <a href="mailto:rachelandrew@google.com">contact Rachel Andrew</a> with an outline of your idea.
+								</p>
+							</div>
+						</div>
 					</div>
 
 				</section>
 			</div>
 		</main>
+
+		<hr>
+
+		<footer>
+			<nav class="footer_nav">
+				<div>
+					<h3>Contribute</h3>
+					<ul>
+						<li>
+							<a href="https://github.com/GoogleChrome/web.dev/issues/new?assignees=&labels=bug&template=bug_report.md&title=">
+								File a bug
+							</a>
+						</li>
+
+						<li>
+							<a href="https://github.com/googlechrome/web.dev">View source</a>
+						</li>
+
+					</ul>
+				</div>
+
+				<div>
+					<h3>Related content</h3>
+					<ul>
+						<li>
+							<a href="https://developer.chrome.com/">developer.chrome.com</a>
+						</li>
+						<li>
+							<a href="https://blog.chromium.org/">Chrome updates</a>
+						</li>
+						<li>
+							<a href="https://web.dev/tags/case-study/">Case studies</a>
+						</li>
+						<li>
+							<a href="https://web.dev/podcasts/">Podcasts</a>
+						</li>
+						<li>
+							<a href="https://web.dev/shows/">Shows</a>
+						</li>
+					</ul>
+				</div>
+
+				<div>
+					<h3>Connect</h3>
+					<ul>
+						<li>
+							<a href="https://www.twitter.com/ChromiumDev">Twitter</a>
+						</li>
+						<li>
+							<a href="https://www.youtube.com/user/ChromeDevelopers">Youtube</a>
+						</li>
+					</ul>
+				</div>
+			</nav>
+
+			<hr>
+
+			<nav class="footer_google">
+				<div class="footer_logo_nav">
+					<ul class="horizontal_nav" role="list">
+						<li>
+							<a href="https://developers.google.com/"> 
+								<img alt="Google Developers" class="w-footer__utility-logo" height="33" src="./assets/lockup-color.png" width="185"> 
+							</a>
+						</li>
+						<li>
+							<a href="https://developer.chrome.com/"> Chrome </a>
+						</li>
+						<li><a href="https://firebase.google.com/"> Firebase </a></li>
+						<li><a href="https://cloud.google.com/"> Google Cloud Platform </a></li>
+						<li><a href="https://developers.google.com/products"> All products </a></li></ul>
+				</div>
+
+				<div class="theme_switch">
+					<div class="dark_switch">
+						<a class="switch_name">Dark theme</a>
+						<a-switch v-model:checked="checked" />
+					</div>
+
+					<div>
+						<a-select ref="select" v-model:value="value1" style="width: 120px" @focus="focus" @change="handleChange">
+							<a-select-option value="English">English(en)</a-select-option>
+						</a-select>
+					</div>
+				</div>
+			</nav>
+
+			<hr />
+
+			<nav>
+				<ul class="privacy">
+					<li>
+						<a href="https://policies.google.com/">Terms & Privacy</a>
+					</li>
+					<li>
+						<a href="https://web.dev/community-guidelines/">Community Guidelines</a>
+					</li>
+				</ul>
+			</nav>
+
+			<p class="bottom_left">Except as otherwise noted, the content of this page is licensed under the <a href="https://creativecommons.org/licenses/by/4.0/"> Creative Commons Attribution 4.0 License</a>, and code samples are licensed under the <a href="https://www.apache.org/licenses/LICENSE-2.0"> Apache 2.0 License</a>. For details, see the <a href="https://developers.google.com/terms/site-policies"> Google Developers Site Policies</a>.</p>
+
+		</footer>
 	</body>
 </template>
 
@@ -267,8 +401,27 @@ export default defineComponent({
 	},
 	setup() {
 		const current = ref(['mail']);
+		const checked = ref(false);
+		const options1 = ref([{
+			value: 'English',
+			label: 'English',
+		}]);
+
+		const focus = () => {
+			console.log('focus');
+		};
+
+		const handleChange = value => {
+			console.log(`selected ${value}`);
+		};
+
 		return {
 			current,
+			checked,
+			focus,
+			handleChange,
+			value1: ref('English'),
+			options1,
 		};
 	},
 });
@@ -295,7 +448,13 @@ section {
 	display: block;
 }
 
+h1, h5 {
+	font-family:Verdana, Geneva, Tahoma, sans-serif;
+	text-align: center;
+}
+
 p {
+	font-family: 'Courier New', Courier, monospace;
 	max-width: 70ch;
 }
 
@@ -305,8 +464,21 @@ img {
 	max-width: 100%;
 }
 
+ul {
+	list-style-type: none;
+	margin: 0px;
+	padding: 0px;
+}
 
+li a {
+	color: #585b63;
+}
 
+footer {
+	padding-left: 3%;
+	padding-right: 3%;
+	font-size: medium;
+}
 
 .header_logo {
 	margin-inline-start: 3%;
@@ -318,11 +490,15 @@ img {
 
 .wrapper {
 	padding: 0 5% 0 5%;
-	background-color: azure;
 }
 
 .flow {
 	padding: 5% 10% 0 10%;
+}
+
+.guidance {
+	
+	background-color: azure;
 }
 
 .true_content {
@@ -399,11 +575,13 @@ img {
 }
 
 .Chrome_developers {
+	padding-top: 3%;
 	padding-bottom: 3%;
+	background-color: #f8f9fa;
 }
 
 .Chrome_logo {
-	margin-bottom: 6%;
+	margin-bottom: 3%;
 }
 
 
@@ -412,11 +590,80 @@ img {
 	display: block;
 	text-align: center;
 	margin-top: -10%;
-	margin-bottom: 10%;
+	margin-bottom: 5%;
 }
 
 .Chrome_d {
-	margin-top: 6%;
+	margin-top: 5%;
+}
+
+.mid-svg {
+	text-align: center;
+}
+
+.two_pad {
+	display: flex;
+	gap: 4%;
+	margin-top: 4%;
+	margin-bottom: 4%;
+}
+
+.span1 {
+	padding: 12px 6px 100px 6px;
+	margin-left: 6px;
+	border-left: 1px solid;
+	font-size: 0;
+}
+
+
+
+.footer_nav {
+	display: flex;
+	justify-content: space-between;
+	margin-right: 20%;
+	margin-block-start: 3%;
+	line-height: 2.5;
+}
+
+.footer_google {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.horizontal_nav, .theme_switch, .dark_switch {
+	display: flex;
+	gap: 3%;
+	align-items: center;
+	padding: 1rem 0;
+}
+
+.horizontal_nav {
+	margin-block-end: 0;
+}
+
+.switch_name {
+	color: #585b63;
+	margin-inline-end: 3%;
+	white-space: nowrap;
+}
+
+.footer_logo_nav {
+	width: 50vw;
+}
+
+.privacy {
+	display: flex;
+	gap: 3%;
+	margin-top: 3%;
+	font-size: small;
+}
+
+.bottom_left {
+	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+	font-size: small;
+	margin-top: 3%;
+	padding-bottom: 3%;
 }
 
 </style>
