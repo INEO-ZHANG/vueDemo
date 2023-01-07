@@ -360,15 +360,16 @@
 				</div>
 
 				<div class="theme_switch">
-					<div class="dark_switch">
-						<a class="switch_name">Dark theme</a>
-						<a-switch v-model:checked="checked" />
-					</div>
-
 					<div>
 						<a-select ref="select" v-model:value="value1" style="width: 120px" @focus="focus" @change="handleChange">
 							<a-select-option value="English">English(en)</a-select-option>
 						</a-select>
+					</div>
+
+					<div class="dark_switch">
+						<label class="switch_name" for="theme_toggle">Dark Theme</label>
+
+						<a-switch id="theme_toggle" v-model:checked="checked" />
 					</div>
 				</div>
 			</nav>
@@ -427,7 +428,17 @@ export default defineComponent({
 });
 </script>
 
-<style>         
+<style>     
+
+:root {
+	--body-color: #fff;
+	background-color: aqua;
+}
+
+body {
+	background-color: aqua;
+}
+
 main {
 	font-family: Verdana, Geneva, Tahoma, sans-serif;
 	font-size: large;
@@ -631,7 +642,7 @@ footer {
 	align-items: center;
 }
 
-.horizontal_nav, .theme_switch, .dark_switch {
+.horizontal_nav {
 	display: flex;
 	gap: 3%;
 	align-items: center;
@@ -648,9 +659,22 @@ footer {
 	white-space: nowrap;
 }
 
+.dark_switch, .theme_switch  {
+	display: flex;
+	align-items: center;
+	padding: 1rem 0;
+}
+
+.theme_switch {
+	flex-direction: row-reverse;
+	gap: 10%;
+	
+}
+
 .footer_logo_nav {
 	width: 50vw;
 }
+
 
 .privacy {
 	display: flex;
