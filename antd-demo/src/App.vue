@@ -12,27 +12,29 @@
 			</a>
 
 
-			<a-menu v-model:selectedKeys="current" mode="horizontal">
+			<div class="ant-nav">
+				<a-menu v-model:selectedKeys="current" mode="horizontal">
 
-				<a-menu-item key="Learn">
-					Learn
-				</a-menu-item>
-				<a-menu-item key="Explore">
-					Explore
-				</a-menu-item>
-				<a-menu-item key="Measure">
-					Measure
-				</a-menu-item>
-				<a-menu-item key="Blog">
-					Blog
-				</a-menu-item>
-				<a-menu-item key="Case studies">
-					Case studies
-				</a-menu-item>
-				<a-menu-item key="About">
-					About
-				</a-menu-item>
-			</a-menu>
+					<a-menu-item key="Learn">
+						Learn
+					</a-menu-item>
+					<a-menu-item key="Explore">
+						Explore
+					</a-menu-item>
+					<a-menu-item key="Measure">
+						Measure
+					</a-menu-item>
+					<a-menu-item key="Blog">
+						Blog
+					</a-menu-item>
+					<a-menu-item key="Case studies">
+						Case studies
+					</a-menu-item>
+					<a-menu-item key="About">
+						About
+					</a-menu-item>
+				</a-menu>
+			</div>
 
 			<a-button class="search_logo" type="text" >
 				<template #icon>
@@ -46,7 +48,7 @@
 		<main>
 			<div class="main_content">
 				<section class="guidance">
-					<div class="wrapper">
+					<div class="wrapper different_color">
 						<div class="true_content">
 							<div class="text_content">
 								<span aria-hidden="ture" class="text_logo">About web.dev</span>
@@ -88,9 +90,12 @@
 						<div class="card">
 							<a-card hoverable style="width: 240px">
 								<template #cover>
-									<img alt="Paul Kinlan" src="./assets/0O1ZGr2P0l9oTKabyUK5.avif" />
+									<a href="https://paul.kinlan.me/">
+										<img alt="Paul Kinlan" src="./assets/0O1ZGr2P0l9oTKabyUK5.avif" />
+									</a>
 								</template>
 								<a-card-meta title="Paul Kinlan">
+									
 									<template #description>DevRel lead</template>
 								</a-card-meta>
 							</a-card>
@@ -100,6 +105,7 @@
 							<a-card class="card" hoverable style="width: 240px">
 								<template #cover>
 									<img alt="Rachel Andrew" src="./assets/dUAN2DEXHRT6G6iPrIby.avif" />
+
 								</template>
 								<a-card-meta title="Rachel Andrew">
 									<template #description>Content lead</template>
@@ -165,7 +171,9 @@
 						<div class="card">
 							<a-card class="card" hoverable style="width: 240px">
 								<template #cover>
-									<img alt="Pete LePage" src="./assets/3rFbsLsMMk1VveHfBRSu.avif" />
+									<a href="https://petelepage.com/">
+										<img alt="Pete LePage" src="./assets/3rFbsLsMMk1VveHfBRSu.avif" />
+									</a>
 								</template>
 								<a-card-meta title="Pete LePage">
 									<template #description>Advanced apps lead</template>
@@ -369,7 +377,7 @@
 					<div class="dark_switch">
 						<label class="switch_name" for="theme_toggle">Dark Theme</label>
 
-						<a-switch id="theme_toggle" v-model:checked="checked" />
+						<a-switch id="theme_toggle" v-model:checked="checked" @change="change_theme"  />
 					</div>
 				</div>
 			</nav>
@@ -397,6 +405,23 @@
 import { defineComponent, ref } from 'vue';
 import { SearchOutlined } from '@ant-design/icons-vue';
 export default defineComponent({
+	methods: {
+		change_theme(checked) {
+			const root = document.querySelector(':root');
+			if(checked){
+				root.style.setProperty('--body-color', '#202124');
+				root.style.setProperty('--text-color', '#d2d3d7');
+				root.style.setProperty('--guidance-color', '#303136');
+				
+			}
+			else {
+				root.style.setProperty('--body-color', '#ffffff');
+				root.style.setProperty('--text-color', '#585b63');
+				root.style.setProperty('--guidance-color', '#f8f9fa');
+			}
+		}
+	},
+
 	components: {
 		SearchOutlined,
 	},
@@ -431,12 +456,16 @@ export default defineComponent({
 <style>     
 
 :root {
-	--body-color: #fff;
-	background-color: aqua;
+	--body-color: #ffffff;
+	--text-color: #585b63;
+	--guidance-color: #f8f9fa;
 }
 
+
+
 body {
-	background-color: aqua;
+	background-color: var(--body-color) !important;
+	color: var(--text-color) !important;
 }
 
 main {
@@ -459,9 +488,10 @@ section {
 	display: block;
 }
 
-h1, h5 {
+h1, h3, h5, label {
 	font-family:Verdana, Geneva, Tahoma, sans-serif;
 	text-align: center;
+	color: var(--text-color) !important;
 }
 
 p {
@@ -482,7 +512,7 @@ ul {
 }
 
 li a {
-	color: #585b63;
+	color: var(--text-color);
 }
 
 footer {
@@ -499,8 +529,17 @@ footer {
 	margin-inline-end: 3%;
 }
 
+.ant-menu {
+	background-color: var(--body-color) !important;
+	color: var(--text-color) !important;
+}
+
 .wrapper {
 	padding: 0 5% 0 5%;
+}
+
+.different_color {
+	background-color: var(--guidance-color);
 }
 
 .flow {
@@ -509,13 +548,13 @@ footer {
 
 .guidance {
 	
-	background-color: azure;
+	background-color: var(--guidance-color);
 }
 
 .true_content {
 	display: flex;
 	flex-wrap: wrap;
-	background-color: azure;
+	background-color: var(--guidance-color);
 	padding-block: 10%;
 	gap: 6%;
 	line-height: 1.7;
@@ -531,6 +570,19 @@ footer {
 
 .text_picture {
 	margin-inline-end: 10%;
+}
+
+.ant-card {
+	background-color: var(--body-color) !important;
+	color: var(--text-color) !important;
+}
+
+.ant-card-meta-title {
+	color: var(--text-color) !important;
+}
+
+.ant-card-meta-description {
+	color: var(--text-color) !important;
 }
 
 .Guidance_text {
@@ -588,7 +640,7 @@ footer {
 .Chrome_developers {
 	padding-top: 3%;
 	padding-bottom: 3%;
-	background-color: #f8f9fa;
+	background-color: var(--guidance-color);
 }
 
 .Chrome_logo {
@@ -665,10 +717,27 @@ footer {
 	padding: 1rem 0;
 }
 
+.ant-btn-primary {
+	border-color: #3740ff !important;
+	background-color: #3740ff !important;
+}
+
 .theme_switch {
 	flex-direction: row-reverse;
 	gap: 10%;
 	
+}
+
+.ant-select:not(.ant-select-customize-input) .ant-select-selector {
+	background-color: var(--body-color) !important;
+}
+
+.ant-select {
+	color: var(--text-color) !important;
+}
+
+.ant-select-arrow {
+	color: var(--text-color) !important;
 }
 
 .footer_logo_nav {
