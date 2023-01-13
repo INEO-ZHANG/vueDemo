@@ -412,12 +412,15 @@ export default defineComponent({
 				root.style.setProperty('--body-color', '#202124');
 				root.style.setProperty('--text-color', '#d2d3d7');
 				root.style.setProperty('--guidance-color', '#303136');
-				
+				root.style.setProperty('--border-color', '#0f0f0f');
+				root.style.setProperty('--button-color', '#2c333f');
 			}
 			else {
 				root.style.setProperty('--body-color', '#ffffff');
 				root.style.setProperty('--text-color', '#585b63');
 				root.style.setProperty('--guidance-color', '#f8f9fa');
+				root.style.setProperty('--border-color', '#f0f0f0');
+				root.style.setProperty('--button-color', '#3740ff');
 			}
 		}
 	},
@@ -459,6 +462,8 @@ export default defineComponent({
 	--body-color: #ffffff;
 	--text-color: #585b63;
 	--guidance-color: #f8f9fa;
+	--border-color: #f0f0f0;
+	--button-color: #3740ff;
 }
 
 
@@ -532,6 +537,10 @@ footer {
 .ant-menu {
 	background-color: var(--body-color) !important;
 	color: var(--text-color) !important;
+}
+
+.ant-btn-text {
+	color:var(--text-color) !important;
 }
 
 .wrapper {
@@ -632,6 +641,10 @@ footer {
 	margin-inline: auto;
 }
 
+.ant-card-bordered {
+	border: 1px solid var(--border-color) !important;
+}
+
 .mid-p {
 	
 	line-height: 1.7;
@@ -718,8 +731,8 @@ footer {
 }
 
 .ant-btn-primary {
-	border-color: #3740ff !important;
-	background-color: #3740ff !important;
+	border-color: var(--button-color) !important;
+	background-color: var(--button-color) !important;
 }
 
 .theme_switch {
